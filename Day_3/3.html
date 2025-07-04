@@ -1,0 +1,58 @@
+<!--Write javascript program to create function based calculator
+switch (choice)
+case 1: addition()
+break;-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addition (a,b){
+            return a+b;
+        }
+        function substraction (a,b){
+            return a-b;
+        }
+        function multiplication (a,b){
+            return a*b;
+        }
+        function division (a,b){
+            if (b==0){
+                return "Cannot divide by zero!";
+            }
+            return a/b;
+        }
+        function modulus (a,b){
+            return a%b;
+        }
+        let a=5;
+        let b=6;
+        let choice = parseInt(prompt("Choose operation:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division"));
+        let num1 = parseFloat(prompt("Enter first number:"));
+        let num2 = parseFloat(prompt("Enter second number:"));
+        let result;
+        switch(choice){
+            case 1:
+                result = addition(a,b);
+                break;
+            case 2:
+                result = substraction(a,b);
+                break;
+            case 3:
+                result = multiplication(a,b);
+                break;
+            case 4:
+                result = division(a,b);
+                break;
+            case 5:
+                result = modulus(a,b);
+                break;
+            }
+    document.write("Result: " + result);
+    </script>
+</body>
+</html>
