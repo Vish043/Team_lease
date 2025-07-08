@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weekdays</h1>
+    <script>
+    let weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
+    let weekenddays = ["Saturday","Sunday"]
+    document.write("<h1>Weekdays</h1>");
+    document.write("The element at weekdays index1 is:"+ weekdays[1]);
+    weekdays[1]=5.555;
+    document.write("<br>>he element at weekdays index1 now is:"+ weekdays[1]);
+    weekdays[1]="Tuesday";
+    document.write("<h1>Weekdays</h1>")
+    for(let i =0 ; i< weekdays.length;i++){
+        document.write(weekdays[i]+"<br>")
+    }
+    document.write("<h1>Weekend days</h1>")
+    for(let j =0 ; j< weekenddays.length;j++){
+        document.write(weekenddays[j]+"<br>")
+    }
+    let week =weekdays+weekenddays
+    document.write("<h1>Week</h1>")
+    for(let i =0 ; i< week.length;i++){
+        document.write(week[i])
+        
+    }
+
+    document.write("")
+</script>
+</body>
+</html>

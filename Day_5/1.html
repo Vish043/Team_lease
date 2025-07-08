@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details</title>
+</head>
+<body>
+  <script>
+    const Employee_details = {
+      Emp_name: "Vishal",
+      address: "Bangalore",
+      Emp_no: 101,
+    details : function() {
+      document.write("<h2>Employee Details</h2>");
+      document.write("Name: " + this.Emp_name + "<br>");
+      document.write("Address: " + this.address + "<br>");
+      document.write("Employee Number: " + this.Emp_no);
+    
+    }};
+
+    Employee_details.details();
+
+    // Displaying values using document.write()
+  </script>
+</body>
+</html>

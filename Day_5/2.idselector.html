@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Selector demo</h1>
+    <p id = "desh"> Country </p>
+    <p class= "gt "> Welcome to javascript</p>
+
+    <script>
+        let data = document.getElementById("desh");
+        data.style.color = "red";
+
+        let data1 = document.querySelector(".gt");
+        data1.style.color = "blue";
+        data1.style.fontSize = "20px";
+        data.style.fontWeight = "bold";
+
+        document.write("<h2> Using getElementByID</h2>")
+        document.write("Text is:" + data.innerHTML + "<br>");
+        document.write("Color is :" + data.style.color + "<br>");
+    </script>
+    
+</body>
+</html>
