@@ -1,33 +1,86 @@
-<!--You are asked to build an interactive Product review form
-for an ecommerce website
-
-Task
-1.collecting the users name reviews/feedback
-2.Display the live characters counted from users typing.
-3.If any required fields are empty.
-4. Allow users to rate the product using a star rating system (1-5)
-5. After successful submission:
-    Showing a Thank You Message.
-    
-    store the submission in localStorage 
-    it should not be lost on page refresh
-    
-    Also display last submitted feedback
-    
-feature
-input field access = getElementBy Id, QuerySelector
-live character count = keyup event
-form validation = javascript conditional
-star rating click events
-rest the form-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Simple Review Form</title>
+  <style>
+    .star { font-size: 24px; cursor: pointer; color: gray; }
+    .selected { color: gold; }
+  </style>
 </head>
 <body>
-    
+  <h2>Product Review</h2>
+
+  <form id="form">
+    Name: <input id="name"><br><br>
+
+    Feedback:<br>
+    <textarea id="feedback" rows="4" cols="30"></textarea><br>
+    Characters: <span id="count">0</span><br><br>
+
+    Rating:<br>
+    <div id="stars">
+      <span class="star" data-v="1">&#9733;</span>
+      <span class="star" data-v="2">&#9733;</span>
+      <span class="star" data-v="3">&#9733;</span>
+      <span class="star" data-v="4">&#9733;</span>
+      <span class="star" data-v="5">&#9733;</span>
+    </div><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="thankyou"></p>
+
+  <h3>Last Feedback:</h3>
+  Name: <span id="savedName">-</span><br>
+  Feedback: <span id="savedText">-</span><br>
+  Rating: <span id="savedRate">-</span>
+
+  <script>
+    const name = document.getElementById("name");
+    const feedback = document.getElementById("feedback");
+    const count = document.getElementById("count");
+    const stars = document.querySelectorAll(".star");
+    let rating = 0;
+
+
+    feedback.addEventListener("keyup", () => {
+      count.textContent = feedback.value.length;
+    });
+
+    stars.forEach(star => {
+      star.onclick = () => {
+        rating = +star.dataset.v;
+        stars.forEach(s => s.classList.toggle("selected", +s.dataset.v <= rating));
+      };
+    });
+
+    document.getElementById("form").onsubmit = (e) => {
+      e.preventDefault();
+      if (!name.value || !feedback.value || !rating) {
+        alert("Fill all fields and select rating");
+        return;
+      }
+      const data = { name: name.value, feedback: feedback.value, rating };
+      localStorage.setItem("review", JSON.stringify(data));
+      document.getElementById("thankyou").textContent = "Thank you!";
+      showLast();
+      document.getElementById("form").reset();
+      count.textContent = 0;
+      stars.forEach(s => s.classList.remove("selected"));
+      rating = 0;
+    };
+
+    function showLast() {
+      const saved = JSON.parse(localStorage.getItem("review"));
+      if (saved) {
+        document.getElementById("savedName").textContent = saved.name;
+        document.getElementById("savedText").textContent = saved.feedback;
+        document.getElementById("savedRate").textContent = saved.rating + " Stars";
+      }
+    }
+
+    showLast(); 
+  </script>
 </body>
 </html>

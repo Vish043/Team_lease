@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calCube(num,callbck)
+        {
+            const cube=num*num
+            callbck(cube);
+        }
+        function getResult(res)
+        {
+            document.write("Cube of a number is:" + res)
+        }
+        calCube(3,getResult);
+    </script>
+</body>
+</html>
