@@ -1,0 +1,13 @@
+We need to sort the list in ascending order
+
+1.Start from the second element (index 1), considering the first element as a sorted part.
+
+2.Compare the current element with the elements in the sorted part (to its left).
+
+3.Shift all the larger elements in the sorted part one position to the right.
+
+4.Insert the current element into its correct position in the sorted part.
+
+5.Repeat steps 2-4 for all elements in the list.
+
+6.After all passes, the list will be sorted.

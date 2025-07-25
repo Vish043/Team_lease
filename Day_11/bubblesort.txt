@@ -1,0 +1,13 @@
+steps → [64, 34, 25, 12, 22, 11, 90]
+We need to sort the list in ascending order
+
+1.Start from the first element of the list.
+
+2.Compare each pair of adjacent elements:
+If the left element is greater than the right, swap them.
+
+3.Repeat this process for all elements — after each full pass, the largest element "bubbles" to the end.
+
+4.Continue this process n-1 times (where n is the number of elements).
+
+5.The list is sorted when no swaps are needed in a full pass.

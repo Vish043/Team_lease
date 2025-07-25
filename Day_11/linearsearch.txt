@@ -1,0 +1,7 @@
+Linear Search
+steps -> [8,5,7,3,2,10,9]
+2 we need to Search
+1.start from the first element
+2. comparing each element of the list with input value
+3.if the element matches the input element then return its index number
+4. if the input element not found return -1

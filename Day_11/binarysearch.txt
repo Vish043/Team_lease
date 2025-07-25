@@ -1,0 +1,15 @@
+steps → [2, 3, 4, 5, 6, 7, 8] (sorted list)
+7 we need to search
+
+1.Start with the first (low = 0) and last (high = len - 1) indexes.
+
+2.Find the middle index → mid = (low + high) // 2
+
+3.Compare the middle element with the input value:
+If it matches, return its index.
+If the input value is smaller, search in the left half (high = mid - 1).
+If the input value is greater, search in the right half (low = mid + 1).
+
+4.Repeat steps 2-3 until the element is found or the search range becomes invalid (low > high).
+
+5.If the input element is not found, return -1.
