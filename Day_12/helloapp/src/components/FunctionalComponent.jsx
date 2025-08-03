@@ -13,6 +13,7 @@ return (
         <label htmlFor = "name">Name:</label>
         <input type="text" id="name" placeholder='Enter Name' value={name}
         onChange={(e)=>setName (e.target.value)}/>
+        <button type="submit">Submit</button>
     </form>
     </>
 );
