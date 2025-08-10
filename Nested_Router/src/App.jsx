@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+import React from "react";
 import About from "./components/about";
 import Navbar from "./Navbar";
 import Home from "./components/Home";
